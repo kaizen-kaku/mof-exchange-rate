@@ -1,0 +1,33 @@
+.exchange-rate-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form {
+  margin-bottom: 12px;
+}
+
+input[type="date"] {
+  margin-right: 8px;
+  padding: 4px;
+}
+
+button {
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 12px;
+  padding: 10px;
+  background: #f3f3f3;
+  border-radius: 6px;
+}
+
+.error {
+  color: red;
+  margin-top: 8px;
+}
