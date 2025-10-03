@@ -1,18 +1,62 @@
+<style>
+    .exchange-rate-container {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-family: sans-serif;
+    }
+
+    .form {
+        margin-bottom: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    input[type="date"] {
+        flex: 1;
+        padding: 6px;
+        min-width: 150px;
+    }
+
+    button {
+        padding: 6px 12px;
+        cursor: pointer;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        background: #f8f8f8;
+    }
+
+    .result {
+        margin-top: 12px;
+        padding: 10px;
+        background: #f3f3f3;
+        border-radius: 6px;
+    }
+
+    .error {
+        color: red;
+        margin-top: 8px;
+    }
+</style>
+
 <div class="exchange-rate-container">
-    <h2>MOF Exchange Rate Lookup</h2>
+    <h2>財務省 為替レート照会</h2>
 
     <div class="form">
-        <label for="date">Enter Date (YYYY-MM-DD):</label>
+        <label for="date">日付を入力 (YYYY-MM-DD):</label>
         <input id="date" type="date" [(ngModel)]="date" />
-        <button (click)="fetchRate()">Get Rate</button>
+        <button (click)="fetchRate()">レート取得</button>
     </div>
 
-    <div *ngIf="loading">Loading...</div>
+    <div *ngIf="loading">読み込み中...</div>
     <div *ngIf="error" class="error">{{ error }}</div>
 
     <div *ngIf="rateData" class="result">
-        <p><strong>Date:</strong> {{ rateData.rate_date }}</p>
-        <p><strong>TTM:</strong> {{ rateData.ttm }}</p>
-        <p><strong>TTS:</strong> {{ rateData.tts }}</p>
+        <p><strong>日付:</strong> {{ rateData.rate_date }}</p>
+        <p><strong>仲値 (TTM):</strong> {{ rateData.ttm }}</p>
+        <p><strong>TTS (銀行売り):</strong> {{ rateData.tts }}</p>
     </div>
 </div>
