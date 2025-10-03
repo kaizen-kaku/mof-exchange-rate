@@ -19,9 +19,6 @@ export class ExchangeRateService {
 
     getExchangeRate(date: string): Observable<ExchangeRateResponse> {
         return this.http.post<ExchangeRateResponse>(this.apiUrl, { date }).pipe(
-            tap(res => {
-                console.log('Exchange rate response:', res);
-            })
         );
     }
 }
