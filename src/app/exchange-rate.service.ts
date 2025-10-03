@@ -13,7 +13,7 @@ interface ExchangeRateResponse {
     providedIn: 'root'
 })
 export class ExchangeRateService {
-    private apiUrl = 'https://kaizenkaku.co.jp/api/exchange-rates';
+    private apiUrl = 'https://www.kaizenkaku.co.jp/api/exchange-rates';
 
     constructor(private http: HttpClient) { }
 
