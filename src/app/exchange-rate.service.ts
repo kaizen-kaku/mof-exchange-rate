@@ -7,6 +7,7 @@ interface ExchangeRateResponse {
     rate_date: string;
     ttm: string;
     tts: string;
+    pdf_link: string;
 }
 
 @Injectable({
