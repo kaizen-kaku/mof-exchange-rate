@@ -16,7 +16,7 @@ export class ExchangeRateComponent {
 
     fetchRate() {
         if (!this.date) {
-            this.error = 'Please enter a valid date.';
+            this.error = '有効な日付を入力してください。';
             return;
         }
 
@@ -30,7 +30,7 @@ export class ExchangeRateComponent {
                 this.loading = false;
             },
             error: (err) => {
-                this.error = err.error?.error || 'Failed to fetch exchange rate';
+                this.error = err.error?.error || '為替レートの取得に失敗しました';
                 this.loading = false;
             }
         });
